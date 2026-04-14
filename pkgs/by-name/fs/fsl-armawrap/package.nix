@@ -18,7 +18,10 @@ stdenv.mkDerivation (finalAttrs: {
     hash = "sha256-I13c2WtwV4rT63T9iP6VkVQ5uw9i2Sh9sfL797xBw7Y=";
   };
 
-  buildInputs = [ fsl-base armadillo ];
+  buildInputs = [
+    fsl-base
+    armadillo
+  ];
 
   buildPhase = ''
     export FSLDIR=${fsl-base}

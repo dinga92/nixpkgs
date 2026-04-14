@@ -69,7 +69,13 @@ stdenv.mkDerivation (finalAttrs: {
     wrapProgram $out/bin/bet \
       --set-default FSLOUTPUTTYPE NIFTI_GZ \
       --set-default FSLDIR ${fsl-base} \
-      --prefix PATH : ${lib.makeBinPath [ fsl-avwutils bc python3Packages.fslpy ]} \
+      --prefix PATH : ${
+        lib.makeBinPath [
+          fsl-avwutils
+          bc
+          python3Packages.fslpy
+        ]
+      } \
       --prefix PATH : $out/bin
   '';
 
